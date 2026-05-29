@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barber Nail · Marlon & Carol · Estudio Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: black; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    img { object-fit: cover; }
+    
+    /* Efecto imágenes */
+    .img-hover {
+      transition: transform 0.4s ease, box-shadow 0.3s;
+    }
+    .img-hover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+    }
+    
+    /* Animación marquee */
+    @keyframes scrollText {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollText 25s linear infinite;
+    }
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
+    }
+    
+    /* Botón */
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37, #B8860B);
+      transition: all 0.3s;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+  </style>
+</head>
+<body class="text-white">
+
+<!-- ========== NAVBAR  ========== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-black tracking-[0.2em]">BARBER NAIL</h1>
+      <p class="text-[11px] text-neutral-400 tracking-[0.4em] uppercase">Marlon & Carol</p>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 uppercase text-sm tracking-wider font-medium">
+      <a href="#inicio" class="hover:text-amber-400 transition">Inicio</a>
+      <a href="#barberia" class="hover:text-amber-400 transition">Barber</a>
+      <a href="#unas" class="hover:text-rose-300 transition">Nails</a>
+      <a href="./Galeria.html" class="hover:text-amber-400 transition">Galería</a>
+      <a href="#contacto" class="hover:text-amber-400 transition">Contacto</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden text-white border border-white/30 px-3 py-1 rounded-lg">☰</button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden flex flex-col gap-4 px-6 pb-6 bg-black/90 backdrop-blur-lg">
+    <a href="#inicio" class="py-2">Inicio</a>
+    <a href="#barberia" class="py-2">Barber</a>
+    <a href="#unas" class="py-2">Nails</a>
+    <a href="./Galeria.html" class="py-2">Galería</a>
+    <a href="#contacto" class="py-2">Contacto</a>
+  </div>
+</header>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+</script>
+
+<!-- ========== HERO  ========== -->
+<section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 bg-cover bg-center"
+  style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('./Fotos/Portada\ pagina.png');">
+  <div class="max-w-4xl mt-20">
+    <p class="text-amber-400 uppercase tracking-[0.4em] text-sm mb-6 font-semibold">Barber & Nail Studio</p>
+    <h2 class="text-5xl md:text-8xl font-black leading-[1.1] mb-8">
+      ESTILO,<br>IMAGEN Y<br>DETALLES
+    </h2>
+    <p class="text-neutral-300 text-lg md:text-xl">Barbería y manicura premium en Palencia.</p>
+    <div class="flex gap-4 justify-center mt-10">
+      <a href="#barberia" class="px-6 py-3 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-400 transition"><i class="fas fa-cut mr-2"></i>Barbería</a>
+      <a href="#unas" class="px-6 py-3 border border-rose-400 text-rose-300 font-bold rounded-full hover:bg-rose-500/10 transition"><i class="fas fa-hand-peace mr-2"></i>Uñas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BARBERÍA ========== -->
+<section id="barberia" class="py-28 px-6 bg-neutral-950">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end border-b border-amber-500/30 pb-5 mb-12">
+      <h3 class="text-4xl md:text-5xl font-bold"><span class="text-amber-400">#</span>Barber</h3>
+      <p class="text-neutral-400 text-sm mt-2 md:mt-0">Cortes modernos y degradados con estilo profesional</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="flex items-center gap-5 mb-6">
+          <img src="./Fotos/Maroln.JPG" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400">
+          <div>
+            <h4 class="text-2xl font-bold">Marlon</h4>
+            <p class="text-amber-400 text-sm">Master Barber</p>
+          </div>
+        </div>
+        <p class="text-neutral-400 leading-relaxed">Cortes de autor, degradados técnicos y asesoría de imagen. Cada servicio está pensado para resaltar tu estilo único.</p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <span class="px-4 py-2 bg-white/5 rounded-full text-sm"><i class="fas fa-cut mr-1 text-amber-400"></i> Corte</span>
+          <span class="px-4 py-2 bg-white/5 rounded-full text-sm"><i class="fas fa-hot-tub mr-1 text-amber-400"></i> Barba</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="./Fotos/Marlon/Corte 7.JPG" class="rounded-2xl h-64 w-full object-cover img-hover">
+        <img src="./Fotos/Marlon/Corte 6.JPG" class="rounded-2xl h-64 w-full object-cover img-hover mt-6">
+        <img src="./Fotos/Marlon/Corte 8.JPG" class="rounded-2xl h-56 w-full object-cover img-hover col-span-2">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== UÑAS ========== -->
+<section id="unas" class="py-28 px-6 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end border-b border-rose-400/30 pb-5 mb-12">
+      <h3 class="text-4xl md:text-5xl font-bold"><span class="text-rose-300">#</span>Nails</h3>
+      <p class="text-neutral-400 text-sm mt-2 md:mt-0">Diseños personalizados y manicura profesional</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="flex items-center gap-5 mb-6">
+          <img src="./Fotos/Cartel carol.JPG" class="w-20 h-20 rounded-full object-cover border-2 border-rose-300">
+          <div>
+            <h4 class="text-2xl font-bold">Carol</h4>
+            <p class="text-rose-300 text-sm">Nail Designer</p>
+          </div>
+        </div>
+        <p class="text-neutral-400 leading-relaxed">Diseños exclusivos, uñas de gel, acrílico y nail art. Calidad y duración garantizada.</p>
+        <div class="grid grid-cols-2 gap-3 mt-6">
+            <div class="bg-white/5 p-3 rounded-lg text-center"><i class="fas fa-palette text-amber-400"></i> <span class="ml-2">Personalizado</span></div>
+            <div class="bg-white/5 p-3 rounded-lg text-center"><i class="fas fa-spa text-amber-400"></i> <span class="ml-2">Tratamiento de manos</span></div>
+            <div class="bg-white/5 p-3 rounded-lg text-center"><i class="fas fa-diamond text-amber-400"></i> <span class="ml-2">Esmaltes Semipermanentes</span></div>
+            <div class="bg-white/5 p-3 rounded-lg text-center"><i class="fas fa-star-of-life text-amber-400"></i> <span class="ml-2">Encapsulado</span></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="./Fotos/Carol/Unas1.JPG" class="rounded-2xl h-64 w-full object-cover img-hover">
+        <img src="./Fotos/Carol/Unas2.JPG" class="rounded-2xl h-64 w-full object-cover img-hover mt-6">
+        <img src="./Fotos/Carol/Unas12.JPG" class="rounded-2xl h-56 w-full object-cover img-hover col-span-2">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BANNER ========== -->
+<div class="marquee-container overflow-hidden py-4 bg-gradient-to-r from-amber-950/30 via-amber-900/20 to-rose-950/30 border-y border-white/5">
+  <div class="marquee-track text-amber-300/80 font-mono text-sm uppercase tracking-widest">
+    ✦ Corte de cabello ✦ Barba de autor ✦ Manicura premium ✦ Uñas de gel ✦ Nail art ✦ Pedicura ✦ Cita previa ✦ Palencia centro ✦
+    ✦ Corte de cabello ✦ Barba de autor ✦ Manicura premium ✦ Uñas de gel ✦ Nail art ✦ Pedicura ✦ Cita previa ✦ Palencia centro ✦
+  </div>
+</div>
+
+<!-- ========== GALERÍA ========== -->
+<section class="py-20 px-6 bg-neutral-950">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-3xl md:text-4xl font-bold mb-4">Galería <span class="text-amber-400">Destacada</span></h3>
+    <div class="w-16 h-0.5 bg-amber-500 mx-auto mb-10"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="./Fotos/Marlon/Corte 10.JPG" class="rounded-xl h-48 w-full object-cover img-hover">
+      <img src="./Fotos/Carol/Unas6.JPG" class="rounded-xl h-48 w-full object-cover img-hover">
+      <img src="./Fotos/Marlon/Corte 4.JPG" class="rounded-xl h-48 w-full object-cover img-hover">
+      <img src="./Fotos/Carol/Unas10.JPG" class="rounded-xl h-48 w-full object-cover img-hover">
+    </div>
+    <a href="./Galeria.html" class="inline-flex items-center gap-2 mt-8 text-amber-400 border-b border-amber-400 pb-1 hover:gap-3 transition-all duration-300">
+      Ver galería completa <i class="fas fa-arrow-right text-sm"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ========== CONTACTO  ========== -->
+<section id="contacto" class="py-28 px-6 bg-black">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-4xl md:text-5xl font-bold mb-12"><span class="text-amber-400">Contacto</span></h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Barbería -->
+      <div class="bg-neutral-900/60 backdrop-blur-sm p-8 rounded-2xl border border-amber-500/20 hover:border-amber-500/40 transition">
+        <i class="fas fa-cut text-3xl text-amber-400 mb-4"></i>
+        <h4 class="text-xl font-bold mb-4">Barbería · Marlon</h4>
+        <a href="tel:+34663515507" class="flex items-center justify-center gap-2 text-green-400 mb-3 hover:text-green-300 transition">
+          <i class="fas fa-phone-alt"></i> +34 663 51 55 07
+        </a>
+        <a href="https://instagram.com/marlonbarber9" target="_blank" class="flex items-center justify-center gap-2 text-pink-400 hover:text-pink-300 transition">
+          <i class="fab fa-instagram"></i> @Marlonbarber9
+        </a>
+      </div>
+      <!-- Uñas -->
+      <div class="bg-neutral-900/60 backdrop-blur-sm p-8 rounded-2xl border border-rose-400/20 hover:border-rose-400/40 transition">
+        <i class="fas fa-hand-peace text-3xl text-rose-300 mb-4"></i>
+        <h4 class="text-xl font-bold mb-4">Nails · Carol</h4>
+        <a href="tel:+34663348982" class="flex items-center justify-center gap-2 text-green-400 mb-3 hover:text-green-300 transition">
+          <i class="fas fa-phone-alt"></i> +34 663 34 89 82
+        </a>
+        <a href="https://instagram.com/nail_carols" target="_blank" class="flex items-center justify-center gap-2 text-pink-400 hover:text-pink-300 transition">
+          <i class="fab fa-instagram"></i> @Nail_carols
+        </a>
+      </div>
+    </div>
+    <!-- Dirección abajo -->
+    <div class="mt-10 pt-6 border-t border-white/10">
+      <p class="text-neutral-400">
+        <i class="fas fa-map-marker-alt text-amber-400 mr-2"></i> C. María de Molina, 6 · Palencia
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="py-8 text-center text-neutral-500 border-t border-white/10 text-sm">
+  <p>© 2026 Barber Nail · Marlon & Carol</p>
+</footer>
+
+</body>
+</html>
